@@ -22,8 +22,8 @@ common.add_tables()
 # Check if the admin account exists
 if not qb.select("users").where([["is_admin", "=", 1]]).all():
     print("Admin account not found")
-    admin_username = input("Enter admin username: ")
-    admin_password = input("Enter admin password: ")
+    admin_username = "admin"
+    admin_password = "admin"
     user.create_admin(admin_username, admin_password)
 
 iptv_data = M3U_Parser(cfg.IPTV_LIST_URL)
